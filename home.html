@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/home_styling.css">
+    <link rel="stylesheet" href="./css/glassmorph_effect.css">
+
+    <script src="./app.js" type="module"></script>
+    <title>
+        test
+    </title>
+</head>
+
+<body>
+    <header>
+        <a class="logo">Top 100 of everything</a>
+        <div class="menu-toggle"></div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Category</a></li>
+                <li><a href="#">Vote</a></li>
+                <li><a href="#">Other Projects</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active');
+                $('nav').toggleClass('active');
+            })
+        })
+    </script>
+    <section>
+        <div class="container">
+        </div>
+    </section>
+</body>
+
+</html>
