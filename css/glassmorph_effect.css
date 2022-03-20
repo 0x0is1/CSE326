@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&family=Poppins:wght@300&display=swap');
+
+:root
+{
+    --clr-self: rgb(255, 255, 255);
+    --clr-bg: rgba(12, 32, 32, 0.712);
+}
+
+section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #23232300;
+    overflow: hidden;
+    padding: 100px 20px;
+    box-sizing: border-box;
+}
+
+.container
+{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .card
+{
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+}
+
+.container .card .imgBox
+{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    transition: 0.5s ease-in-out;
+}
+
+.container .card:hover .imgBox
+{
+    transform: translateY(-50px);
+}
+.container .card .imgBox img
+{
+    max-width: 100%;
+    margin: 0 0 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.container .card:hover .imgBox img
+{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .card .imgBox h2
+{
+    font-size: 20px;
+    color: var(--clr-self);
+}
+
+.container .card:hover .imgBox h2
+{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .card .content
+{
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .card .content h5
+{
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--clr-self);
+}
+
+.container .card:hover .content
+{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50px);
+}
