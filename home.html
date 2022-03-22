@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta name="current_page" content="1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Poppins:wght@300&display=swap"
@@ -10,12 +11,11 @@
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
         integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="./css/home_styling.css">
+    <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/glassmorph_card.css">
     <script src="./app.js" type="module"></script>
-    <title>
-        Top 100 - Blog
-    </title>
+    <link rel="stylesheet" href="./css/pagination.css">
+    <title>Top 100 - Blog</title>
     <link rel="icon" href="./favicon.png" type="image/png">
 </head>
 
@@ -25,11 +25,11 @@
         <div class="menu-toggle"></div>
         <nav>
             <ul>
-                <li><a href="#" class="active">Home</a></li>
+                <li><a href="/home.html" class="active">Home</a></li>
                 <li><a href="#">Category</a></li>
                 <li><a href="#">Vote</a></li>
                 <li><a href="#">Other Projects</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="/pages/about.html">About</a></li>
             </ul>
         </nav>
         <div class="clearfix"></div>
@@ -44,10 +44,12 @@
             })
         })
     </script>
-    <section>
+    <section id="ctn">
         <div class="container">
         </div>
     </section>
+    <div class="pagination">
+    </div>    
 </body>
 
 </html>
