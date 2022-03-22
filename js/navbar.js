@@ -1,1 +1,0 @@
-var navbar_cdblk = '<a class="logo">Top 100 of everything</a><div class="menu-toggle"></div><nav><ul><li><a href="#" class="active">Home</a></li><li><a href="#">About</a></li><li><a href="#">Team</a></li><li><a href="#">Service</a></li><li><a href="#">Portfolio</a></li></ul></nav><div class="clearfix"></div>'
