@@ -1,0 +1,22 @@
+:root {
+  --clr-neon: rgb(1, 255, 192);
+  --clr-bg: rgba(12, 32, 32, 0.712);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  /*
+    background-image: url("../res/bg.jpg");
+    */
+  background-color: #282c34;
+  /*
+    background-attachment: fixed;
+    */
+}
+
+.heading h1
+{
+  color: var(--clr-neon);
+}
