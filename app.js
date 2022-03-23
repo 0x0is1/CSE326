@@ -18,7 +18,11 @@ window.query4npage = (n) => {
 };
 
 window.gen_rank_page = (topic_id) => {
-    events_handler.set_ranked_page(topic_id);
+    //events_handler.set_ranked_page(topic_id);
+    var code = '<center><h1>List Reranked by users</h1></center>';
+    document.getElementsByClassName("container")[0].innerHTML = null;
+    document.getElementsByClassName("pagination")[0].innerHTML = null;
+    document.getElementsByClassName("heading")[0].innerHTML = code;
 };
 
 
