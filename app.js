@@ -1,7 +1,7 @@
 import * as events_handler from './js/events_handler.js';
 
 if (!window.navigator.onLine) {
-    alert("This site fetch data from 3rd party API.\nInternet is required for such purpose.");
+    alert("This site fetch data from external API.\nInternet is required for such purpose.");
     window.stop();
 }
 
@@ -17,12 +17,10 @@ window.query4npage = (n) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-window.gen_rank_page = (topic_id) => {
-    //events_handler.set_ranked_page(topic_id);
-    var code = '<center><h1>List Reranked by users</h1></center>';
-    document.getElementsByClassName("container")[0].innerHTML = null;
-    document.getElementsByClassName("pagination")[0].innerHTML = null;
-    document.getElementsByClassName("heading")[0].innerHTML = code;
+window.gen_rerank_page = (topic_id) => {
+    events_handler.set_reranked_page(topic_id);
 };
 
-
+window.gen_ranked_page = (topic_id) => {
+    console.log(topic_id);
+};

@@ -25,9 +25,9 @@ function ranked_lists_parser(raw_data) {
     for (let i in ranked_list) {
         const id = JSON.stringify(ranked_list[i].id);
         const name = strip(JSON.stringify(ranked_list[i].name)).slice(1, -1);
-        const user_name = strip(JSON.stringify(ranked_list[i].user.userName)).slice(1, -1);
-        const pubdt = JSON.stringify(ranked_list[i].publishDate);
-        const moddt = JSON.stringify(ranked_list[i].modifiedOn);
+        const user_name = strip(JSON.stringify(ranked_list[i].user.userName)).slice(1, 12).replace('"', '');
+        const pubdt = new Date(JSON.stringify(ranked_list[i].publishDate)*1).toLocaleDateString().replaceAll("/", ".").replace("/", ".");
+        const moddt = new Date(JSON.stringify(ranked_list[i].modifiedOn)*1).toLocaleDateString().replace("/", ".").replace("/", ".");
         const stats = ranked_list[i].listStats;
         const votes = JSON.stringify(stats.totalVotes);
         const views = JSON.stringify(stats.viewCount);
