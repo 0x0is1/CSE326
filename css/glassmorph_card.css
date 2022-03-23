@@ -15,7 +15,7 @@ section#ctn
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 1vh;
+    min-height: 100vh;
     background: var(--clr-sec-bg);
     overflow: hidden;
     padding: 40px 10px;
