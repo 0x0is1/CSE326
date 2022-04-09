@@ -2,18 +2,10 @@
 <html>
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Poppins:wght@300&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
-        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
-
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/glassmorph_card.css">
     <title>
-        Top 100 - Blog
+        Top 100 - About
     </title>
     <script type="module">
         import * as events_handler from '../js/events_handler.js';
@@ -21,7 +13,9 @@
     </script>
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="stylesheet" href="../css/basic.css">
-
+    <link rel="stylesheet" href="../css/new.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
 <body>
@@ -31,7 +25,26 @@
         <div class="container">
         </div>
     </section>
-
+    <header class="dls">
+        <div class="grid">
+            <img src='../res/img1.png' height="10%" width="10%"></img>
+            <button type="button" name="dislike"  width="150%">
+                <span class="material-icons">&#xe9f2;</span>
+                <br>Dislike
+            </button>
+            <button type="button" name="like" width="150%">
+                <span class="material-icons">&#xe9f3;</span>
+                <br>Like
+            </button>
+            <h1>Top 100</h1>
+            <h5> Cast: <i>Abcd efgh</i></h5>
+            <h3>
+                How to I align text to the right side of the image icon like the one in the example picture.
+                I would usually use "float:left" but it's for a mobile responsive design so I prefer not using things like "float:left" because it ruins the red divs height with responsive designs.
+                I have to align the title, subsitle and a little square image.
+            </h3>
+        </div>
+    </header>
 </body>
 
 </html>

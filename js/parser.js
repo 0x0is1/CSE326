@@ -36,4 +36,32 @@ function ranked_lists_parser(raw_data) {
     }
     return data_container;
 }
-export { home_data_parser, strip, ranked_lists_parser };
+
+function rank_parser(raw_data) {
+    console.log(raw_data);
+    const listItems = raw_data.listItems;
+    var data_container = [];
+    for (let i in listItems) {
+        const node = listItems[i].node;
+        const name = strip(JSON.stringify(node.name));
+        const props = node.nodeProperties;
+        var propContainer = {};
+        for (let j in props) {
+            propContainer[props[j].displayName] = props[j].propertyValue;
+        }
+        const templateProperty = node.templateProperty;
+        const tname = templateProperty.displayName;
+        const tprop = templateProperty.propertyValue;
+        const nodeWikis = node.nodeWikis;
+        var wikiContainer = {};
+        for (let k in nodeWikis) {
+            wikiContainer[nodeWikis[k].descriptionType] = [
+                nodeWikis[k].wikiText,
+                nodeWikis[k].wikiLink
+            ];
+        }
+        data_container.push.apply(data_container, [name, propContainer, tname, tprop, wikiContainer]);
+    }
+    return data_container;
+}
+export { home_data_parser, strip, ranked_lists_parser, rank_parser };

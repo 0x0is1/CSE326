@@ -13,9 +13,10 @@ function set_navbar(active_class) {
         }
     );
 }
+
 function set_top_query4npage(page_no) {
     const urls = new requests.SubUrls(null, (25*page_no));
-    requests.fetch_url("GET", requests.BASE_URL + urls.browse_query).then(resp => {
+    requests.fetch_url(requests.BASE_URL + urls.browse_query, "GET").then(resp => {
         var parsed_data = parser.home_data_parser(JSON.parse(resp));
         const total_pages = parsed_data.slice(-1)[0];
         parsed_data = parsed_data.slice(0, -1).slice(-25 * 4);
@@ -41,8 +42,8 @@ function set_reranked_page(topic_id) {
     ctn.innerHTML = null;
     document.getElementsByClassName("pagination")[0].innerHTML = null;
     document.getElementsByClassName("heading")[0].innerHTML =
-        '<center><h1>List Reranked by users</h1></center>';
-    requests.fetch_url("GET", requests.BASE_URL + urls.reranks)
+        '<center><h1>Reranked by users</h1></center>';
+    requests.fetch_url(requests.BASE_URL + urls.reranks, "GET")
         .then(resp => {
             let parsed_data = parser.ranked_lists_parser(JSON.parse(resp));
             var card = null;
@@ -52,4 +53,20 @@ function set_reranked_page(topic_id) {
             }
         });
 }
-export { set_top_query4npage, set_pagination_bar, set_reranked_page, set_navbar };
+
+function set_rankItem_page(topic_id) {
+    const urls = new requests.SubUrls(topic_id, 100);
+    let ctn = document.getElementsByClassName("container")[0];
+    ctn.innerHTML = null;
+    document.getElementsByClassName("pagination")[0].innerHTML = null;
+    document.getElementsByClassName("heading")[0].innerHTML =
+        '<center><h1>Reranked by users</h1></center>';
+    requests.fetch_url(requests.BASE_URL + urls.items, "GET")
+        .then(resp => {
+            var litems = JSON.parse(resp);
+            console.log(litems);
+            console.log(parser.rank_parser(litems));
+        });
+}
+
+export { set_top_query4npage, set_pagination_bar, set_reranked_page, set_navbar, set_rankItem_page };

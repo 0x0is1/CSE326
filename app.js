@@ -22,5 +22,5 @@ window.gen_rerank_page = (topic_id) => {
 };
 
 window.gen_ranked_page = (topic_id) => {
-    console.log(topic_id);
+    events_handler.set_rankItem_page(topic_id);
 };

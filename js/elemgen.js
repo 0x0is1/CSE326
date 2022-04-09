@@ -73,7 +73,7 @@ function get_pagination_code(current_page, last_page) {
 function get_reranked_code(data) {
     var code = '<a class="card" onclick="gen_ranked_page(' + data[0] + ')">\
         <div class="imgBox"><img src=' + data[3] + '></img>\
-        <h2><br /> Published by: ' + data[2] + '<br />\
+        <h2><br /> Ranked by: ' + data[2] + '<br />\
         Date: ' + data[5] + '<br />👁 ' + data[7] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;👍 ' + data[6] +'</h2></div>\
         <div class="content"><h5>Top 100 Of ' + data[1] + '</h5></div></a>';
     return code;
