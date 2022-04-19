@@ -23,15 +23,7 @@ function set_top_query4npage(page_no) {
         var elem = document.getElementsByClassName("container")[0];
         elem.innerHTML = null;
         var dropdown = document.getElementsByClassName("dropdown-container")[0];
-        var str = "";
-        str += `<select name="theme" id="dropdown-theme" onchange="change_theme(this.value)">`;
-        str += `<option value="0">Dark</option>`;
-        str += `<option value="1">Yellow</option>`;
-        str += `<option value="2">Red</option>`;
-        str += `<option value="3">Greenland</option>`;
-        str += `<option value="4">Blossom</option>`;
-        str += `<option value="5">Orange</option>`;
-        dropdown.innerHTML = str;
+        dropdown.innerHTML = codegen.gen_theme_code();
         var card = null;
         for (var i = 1; i < parsed_data.length; i += 4) {
             card = codegen.gen_card_code(parsed_data[i + 2], parsed_data[i - 1], parsed_data[i + 1], parsed_data[i]);
@@ -60,13 +52,7 @@ function set_reranked_page(topic_id, topic) {
                 str += option;
             }
             str += `</select>`;
-            str += `<select name="theme" id="dropdown-theme" onchange="change_theme(this.value)">`;
-            str += `<option value="0">Cyan</option>`;
-            str += `<option value="1">Yellow</option>`;
-            str += `<option value="2">Red</option>`;
-            str += `<option value="3">Greenland</option>`;
-            str += `<option value="4">Blossom</option>`;
-            str += `<option value="5">Orange</option>`;
+            str += codegen.gen_theme_code();
             dctn.innerHTML = str;
             set_rankItem_page(parsed_data[parsed_data.length-1], topic);
         }
@@ -91,7 +77,7 @@ function set_rankItem_page(topic_id, topic) {
                 ctn.innerHTML += code;
             }
             if (ctn.innerHTML.length < 5) {
-                ctn.innerHTML = `<center><h1 style="color:cyan">Looks like this user has not added anything.</h1></center>`;
+                ctn.innerHTML = `<center><h1 style="color:var(--clr-neon)">Looks like this user has not added anything.</h1></center>`;
             }
             ctn.style.display = 'block';
         });

@@ -11,6 +11,7 @@ window.onload = () => {
     events_handler.set_navbar(0);
     events_handler.set_top_query4npage(1);
     events_handler.set_pagination_bar(1, TOTAL_PAGES);
+    window.change_theme(localStorage.getItem("themecode") | 0);
 };
 
 window.query4npage = (n) => {
@@ -95,6 +96,7 @@ window.topFunction = () => {
 };
 
 window.change_theme = (val) => {
+    localStorage.setItem("themecode", val);
     const headTag = document.getElementsByTagName('head')[0];
     var st = headTag.getElementsByTagName("style");
     for (let i in st) {

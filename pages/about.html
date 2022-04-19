@@ -4,18 +4,30 @@
 <head>
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/glassmorph_card.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script src = "../app.js" type="module"></script>
     <title>
         Top 100 - About
     </title>
     <script type="module">
         import * as events_handler from '../js/events_handler.js';
-        window.onload = () => events_handler.set_navbar(4);
+        window.onload = () => events_handler.set_navbar(3);
     </script>
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="stylesheet" href="../css/basic.css">
     <link rel="stylesheet" href="../css/grid.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/vaakash/socializer@2f749eb/css/socializer.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <script type = "module">
+        import * as elemgen from '../js/elemgen.js';
+        var dropdown = document.getElementsByClassName("dropdown-container")[0];
+        var str = elemgen.gen_theme_code();
+        dropdown.innerHTML = str;
+        window.change_theme(localStorage.getItem("themecode") | 0);
+    </script>
 </head>
 
 <body>
@@ -25,26 +37,146 @@
         <div class="container">
         </div>
     </section>
-    <header class="dls">
-        <div class="grid">
-            <img src='../res/img1.png' height="10%" width="10%"></img>
-            <button type="button" name="dislike"  width="150%">
-                <span class="material-icons">&#xe9f2;</span>
-                <br>Dislike
-            </button>
-            <button type="button" name="like" width="150%">
-                <span class="material-icons">&#xe9f3;</span>
-                <br>Like
-            </button>
-            <h1>Top 100</h1>
-            <h5> Cast: <i>Abcd efgh</i></h5>
-            <h3>
-                How to I align text to the right side of the image icon like the one in the example picture.
-                I would usually use "float:left" but it's for a mobile responsive design so I prefer not using things like "float:left" because it ruins the red divs height with responsive designs.
-                I have to align the title, subsitle and a little square image.
-            </h3>
-        </div>
-    </header>
+        <div class="dropdown-container"></div>
+
+        <div class="dls grid" style="color:var(--clr-neon)">
+        <center>
+            <u><h1>Introduction</h1></u>
+            <u><h2 id="pname">Century-pedia: <cite>Power to the User, Powered by the User</cite></h2></center></u>
+            <h2>A simple website made HTML, CSS and Javascript to
+                proper theming features, and API consumption to
+                provide <cite>Century-pedia</cite> of almost everything.<br>
+                <h3>This Project contains data Rated by the User.</h3>
+                <h4>Although as of now this project is mainly read-only, but in near future, It will also accept ratings from the user.</h4>
+            </h2>
+            <h3>Features</h3>
+            <ul>
+                <li>
+                    <details>
+                        <summary>Template embedding based</summary>
+                        <p>There are minimal amount of direct HTML has been used in the project.<br>
+                            Most of them are in string form in javascript files.<br>
+                            This is to avoid lagging and increasing reusabilty of loaded page.<br>
+                        </p>
+                    </details>
+
+                </li>
+                <li>
+                    <details>
+                        <summary>Optimized with Redis</summary>
+                        <p>API used in the project to provide data is completely optimized with Redis<br>
+                            to decrease pmemory consumption.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary><dfn title="Javascript framework for special front-end effects">Vanilla.js</dfn> for css effects</summary>
+                        <p>Even though it has not been taught in class, This project still contains<br>
+                            Vanilla.js for special effects like Pagination bar, Glassmorphism effect,
+                            Neon naviagation bar effect etc.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>REST API Based</summary>
+                        <p>This project is using <a href="ranker.com">Ranker API</a> to get TOP 100<br>
+                            data to use in. This API consumption is with the proper acknowledgement of<br>
+                            API owners, so not illegal. Although API wrapper can be added to divert reverse tracking.
+                        </p>
+                        <p>It also uses github API and other 3rd party APIs to get users and Repository
+                            data.
+                        </p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Themed</summary>
+                        <p>Theme-ing has been applied in the pages with provide proper customisiation
+                            as per users need.
+                            <p>Themes avaibale are:</p>
+                            <ol>
+                                <li>Cyan</li>
+                                <li>Yellow</li>
+                                <li>Red</li>
+                                <li>Green</li>
+                                <li>Orange</li>
+                            </ol>
+                        </p>
+                    </details>
+                </li>
+            </ul>
+            <h3>Future Features</h3>
+            <ul>
+                <li>Implement Twitter API to get what people are talking about <a href="#pname">this Topic.</a></li>
+                <li>Implement <dfn title="Google platform to provide realtime database management system.">FIREBASE</dfn> to recieve liked/disliked/published data
+                by user and update it everywhere.</a></li>
+                <li>Implement proper Github API with authetication.</li>
+                <li>Replace HTTP requests with websocket</li>
+                <li>Add posting new rankings by user.</li>
+                <li>Add like and dislike submission.</li>
+            </ul>
+        </center>
+    </div>
+    </center>
+    <div class="dls grid" style="color:var(--clr-neon)">
+        <center>
+            <u><h2>About Author</cite></h2></center></u>
+            <h4>
+                Hello fellow developers. This is me, <a href="https://github.com/0x0is1">Surya</a>.
+                Bringing you a platform to get top 100s of everything in the world.
+                <b>Hope You will like it.</b>
+            </h4>
+            <h3><u>Past careers</u></h3>
+            <ul>
+                <li>Worked as Network security designer</li>
+                <li>Freelancing since 2018</li>
+                <li>Worked as backend M.E.R.N. developer as 3rd party vendor.</li>
+                <li>Open-source <a href="https://github.com/0x0is1/0x0is1>">contribution</a> is freetime to-go.</li>
+                <li>Student at Lovely Professional University</li>
+            </ul>
+        </center>
+    </div>
+    <div class="grid">
+        <center>
+            <u><h1>My Github</h1></u>
+            <div class="github-card" data-github="0x0is1" data-width="1300" data-height="150" data-theme="medium"></div></center>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    </div>
+
+    <div class="grid" style="background-color: var(--clr-bg); min-height:5vh">
+        <center>
+        <div class="socializer a sr-64px sr-squircle sr-opacity sr-icon-white sr-pad">
+        <span class="sr-twitter">
+            <a href="https://twitter.com/0x0is1" target="_blank" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </span>
+        <span class="sr-reddit">
+            <a href="https://reddit.com/u/0x0is1" target="_blank" title="Reddit">
+                <i class="fab fa-reddit"></i>
+            </a>
+        </span>
+        <span class="sr-email">
+            <a href="mailto:0x0is1@protonmail.com" target="_blank" title="Email">
+                <i class="fa fa-envelope"></i>
+            </a>
+        </span>
+        <span class="sr-linkedin">
+            <a href="https://www.linkedin.com/li/notyoursurya" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </span>
+        <span class="sr-github">
+            <a href="https://www.github.com/0x0is1" target="_blank" title="Github">
+                <i class="fab fa-github"></i>
+            </a>
+        </span>
+        </center>
+    </div>
+    </div>
+    <span id="myBtn" onclick="topFunction()" class="material-icons">&#xf182;</span>
 </body>
 
 </html>

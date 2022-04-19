@@ -1,6 +1,6 @@
 function gen_navbar_code(active_class) {
-    const menu_items = ['Home', 'Publish', 'Vote', 'Other Projects', 'About'];
-    const hrefs = ['/', '/pages/publish.html', '/pages/vote.html', '/pages/projects.html', '/pages/about.html'];
+    const menu_items = ['Home', 'Feedback', 'Other Projects', 'About'];
+    const hrefs = ['/', '/pages/feedback.html', '/pages/projects.html', '/pages/about.html'];
     var code = 
         '<a class="logo">Top 100 of everything</a><div class="menu-toggle"></div><nav><ul>';
     for (let i = 0; i < menu_items.length; i++){
@@ -109,4 +109,14 @@ function get_rankpage_code(data, idx) {
     return code;
     // name, propContainer, tname, tprop, wikiContainer
 }
-export { gen_card_code, get_pagination_code, gen_navbar_code, get_reranked_code, get_rankpage_code };
+function gen_theme_code() {
+    var str = `<select name="theme" id="dropdown-theme" onchange="change_theme(this.value)">`;
+    str += `<option value="0">Cyan</option>`;
+    str += `<option value="1">Yellow</option>`;
+    str += `<option value="2">Red</option>`;
+    str += `<option value="3">Greenland</option>`;
+    str += `<option value="4">Blossom</option>`;
+    str += `<option value="5">Orange</option>`;
+    return str;
+}
+export { gen_card_code, get_pagination_code, gen_navbar_code, get_reranked_code, get_rankpage_code, gen_theme_code };

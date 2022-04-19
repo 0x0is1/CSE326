@@ -11,27 +11,49 @@
         integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/glassmorph_card.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <title>
-        Top 100 - Blog
+        Top 100 - Projects
     </title>
+    <script src = "../app.js" type="module"></script>
     <script type="module">
         import * as events_handler from '../js/events_handler.js';
-        window.onload = () => events_handler.set_navbar(3);
+        window.onload = () => events_handler.set_navbar(2);
     </script>
+
     <link rel="icon" href="../favicon.png" type="image/png">
     <link rel="stylesheet" href="../css/basic.css">
-
+    <link rel="stylesheet" href="../css/grid.css">
+    <script type = "module">
+        import * as elemgen from '../js/elemgen.js';
+        var dropdown = document.getElementsByClassName("dropdown-container")[0];
+        var str = elemgen.gen_theme_code();
+        dropdown.innerHTML = str;
+        window.change_theme(localStorage.getItem("themecode") | 0);
+    </script>
 </head>
-
 <body>
-    <header class="navheader">
-    </header>
-    <section>
-        <div class="container">
+    <header class="navheader"></header>
+    <div class="dls">
+        <center><h1 style="color:var(--clr-neon)">Some other projects i have worked on</h1></center>
+    </div>
+    <div class="dropdown-container"></div>
+    <div class="project-container grid" style="background-color:var(--clr-bg)">
+        <a href = "https://github.com/0x0is1/cricbot-mkII"><img align="center" src="https://github-readme-stats.itzsylex.vercel.app/api/pin/?username=0x0is1&repo=cricbot-mkII&theme=tokyonight" /></a>
+        <a href = "https://github.com/0x0is1/pratilipi-desktop-app"><img align="center" src="https://github-readme-stats.itzsylex.vercel.app/api/pin/?username=0x0is1&repo=pratilipi-desktop-app&theme=tokyonight"/>
+        <a href = "https://github.com/0x0is1/drhelp"><img align="center" src="https://github-readme-stats.itzsylex.vercel.app/api/pin/?username=0x0is1&repo=drhelp&theme=tokyonight" /></a>
+        <a href = "https://github.com/0x0is1/saycheese-antidote"><img align="center" src="https://github-readme-stats.itzsylex.vercel.app/api/pin/?username=0x0is1&repo=saycheese-antidote&theme=tokyonight" /></a>
+        <a href = "https://github.com/0x0is1/helina-discord-radio"><img align="center" src="https://github-readme-stats.itzsylex.vercel.app/api/pin/?username=0x0is1&repo=helina-discord-radio&theme=tokyonight" /></a>
+        <a href = "https://github.com/0x0is1/BulletIn-bot"><img align="center" src="https://github-readme-stats.itzsylex.vercel.app/api/pin/?username=0x0is1&repo=BulletIn-bot&theme=tokyonight" /></a>
+        <a href = "https://github.com/0x0is1/R.O.C.E-MarkIII"><img align="center" src="https://github-readme-stats.itzsylex.vercel.app/api/pin/?username=0x0is1&repo=R.O.C.E-MarkIII&theme=tokyonight" /></a>
+        <a href = "https://github.com/0x0is1/DeepNoodle-GUI"><img align="center" src="https://github-readme-stats.itzsylex.vercel.app/api/pin/?username=0x0is1&repo=DeepNoodle-GUI&theme=tokyonight" /></a>
+        <a href = "https://github.com/0x0is1/DeepNoodle-CLI"><img align="center" src="https://github-readme-stats.itzsylex.vercel.app/api/pin/?username=0x0is1&repo=DeepNoodle-CLI&theme=tokyonight" /></a>
+        <a href = "https://github.com/0x0is1/codetantra-autoscript"><img align="center" src="https://github-readme-stats.itzsylex.vercel.app/api/pin/?username=0x0is1&repo=codetantra-autoscript&theme=tokyonight" /></a>
+        <a href = "https://github.com/0x0is1/lowy-index-api-docs"><img align="center" src="https://github-readme-stats.itzsylex.vercel.app/api/pin/?username=0x0is1&repo=lowy-index-api-docs&theme=tokyonight" /></a>
+        <a href = "https://github.com/0x0is1/LGC"><img align="center" src="https://github-readme-stats.itzsylex.vercel.app/api/pin/?username=0x0is1&repo=LGC&theme=tokyonight" /></a>
         </div>
-    </section>
-
+        <span id="myBtn" onclick="topFunction()" class="material-icons">&#xf182;</span>
 </body>
 
 </html>

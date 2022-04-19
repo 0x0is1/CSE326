@@ -100,4 +100,8 @@ div.cbh{
     width: 20%;
     height: 20%;
   }
+  #dropdown-theme {
+    float: none;
+    margin-left: 20px;
+  }
 }
