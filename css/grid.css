@@ -1,0 +1,86 @@
+body{
+  background-color: var(--clr-sec-bg);
+}
+
+header.dls{
+    display: none;
+}
+
+.imge{
+  float: left;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  max-height: 24vh;
+}
+
+.grid{
+  padding-top: 12px;
+  background: var(--clr-sec-bg);
+  color:var(--clr-neon);
+  margin: 40px 10px;
+  border: var(--clr-neon-self) 2px solid;
+  border-radius: 0.5em;
+  text-shadow: 0 0 0.125em hsl(0 0 100% / 0.5),
+  0 0 0.45em var(--clr-neon-self);
+  box-shadow: inset 0 0 1em 0 var(--clr-neon-self),
+  0 0 1em 0 var(--clr-neon-self);
+  position: relative;
+  min-height: 25vh;
+}
+
+.grid h3, .grid h4, .grid h2, .grid h1{
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+  text-decoration: none;
+}
+
+button{
+  float: right;
+  background-color: var(--clr-sec-bg);
+  border-radius: 00.45em;
+  border-color: var(--clr-sec-neon);
+  color: var(--clr-neon-self);
+  padding: 6px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: inset 0 0 1em 0 var(--clr-neon-self),
+    0 0 1em 0 var(--clr-neon-self);
+}
+button:hover{
+      background: var(--clr-neon);
+      transition: 0.5s;
+      color: var(--clr-bg);
+      text-shadow: none;
+      box-shadow: 0 0 2em 0.5em var(--clr-neon);
+}
+div.cbh{
+  display: none;
+}
+
+@keyframes fade_in_show {
+  0% {
+    opacity: 0;
+    transform: scale(0)
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
+@media (max-width: 968px) {
+  button{
+    display: none;
+  }
+  .imge{
+    margin: 0, 2rem;
+    float: none;
+    width: 20%;
+    height: 20%;
+  }
+}

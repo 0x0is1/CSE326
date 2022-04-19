@@ -10,7 +10,7 @@ body {
   /*
     background-image: url("../res/bg.jpg");
     */
-  background-color: #282c34;
+  background-color: var(--clr-sec-bg);
   /*
     background-attachment: fixed;
     */
@@ -19,4 +19,15 @@ body {
 .heading h1
 {
   color: var(--clr-neon);
+}
+
+select {
+  font-size: 20px;
+  width: 200px;
+  height: 30px;
+  background: var(--clr-bg);
+  border-radius: 2px;
+  color: var(--clr-neon);
+  border-color: var(--clr-neon);
+  padding-left: 20px;
 }
