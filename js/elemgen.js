@@ -16,14 +16,14 @@ function gen_navbar_code(active_class) {
 
 function gen_card_code(img_url, title, description, id) {
     var card_code =
-        '<a class="card" onclick="gen_rerank_page(' + id + ')">\
-        <div class="imgBox">\
-        <img src=' + img_url + '></img>\
-        <h2>Top 100 Of ' + title + '</h2>\
-        </div>\
-        <div class="content">\
-        <h5><br />' + description + '</h5></div>\
-        </a>';
+        `<a class="card" onclick="gen_rerank_page(` + id + `, '` + title +`')">
+        <div class="imgBox">
+        <img src=` + img_url + `></img>
+        <h2>Top 100 Of ` + title + `</h2>
+        </div>
+        <div class="content">
+        <h5><br />` + description + `</h5></div>
+        </a>`;
     return card_code;
 }
 
@@ -71,12 +71,42 @@ function get_pagination_code(current_page, last_page) {
 }
 
 function get_reranked_code(data) {
-    var code = '<a class="card" onclick="gen_ranked_page(' + data[0] + ')">\
-        <div class="imgBox"><img src=' + data[3] + '></img>\
-        <h2><br /> Ranked by: ' + data[2] + '<br />\
-        Date: ' + data[5] + '<br />👁 ' + data[7] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;👍 ' + data[6] +'</h2></div>\
-        <div class="content"><h5>Top 100 Of ' + data[1] + '</h5></div></a>';
-    return code;
+    return `<option value="` + data[0] + `">` + data[1] + `</option>`;
 }
 
-export { gen_card_code, get_pagination_code, gen_navbar_code, get_reranked_code };
+function get_rankpage_code(data, idx) {
+    var code = `<div class="grid" onclick="expand(this)">
+            <img src="` + data[5] + `" height="10%" width="15%" class="imge"></img>
+            <button type="button" name="dislike"  width="150%" onclick="change_icon(this)">
+                <span class="material-icons">&#xe9f2;</span>
+                <br>Dislike
+            </button>
+            <button type="button" name="like" width="150%" onclick="change_icon(this)">
+                <span class="material-icons">&#xe9f3;</span>
+                <br>Like
+            </button>
+            <h1><b>#` + idx + `</b> | ` + data[0].slice(1, -1) + `</h1>`;
+    if (data[3] != '') {
+        code += '<h4>' + data[2] + ': <i>' + data[3] + '</i></h4>';
+    }
+    code += `<div class="cbh" style="display: none; animation: fade_in_show 0.5s;">`;
+    
+    for (let i in data[1]) {
+        if (data[1][i] != '') {
+            code += `<h4><b>` + i + `</b>: ` + data[1][i] + `</h4>`;    
+        }
+    }
+    for (let j in data[4]) {
+        code += `<h2>` + j + `</h2>`;
+        code += `<h3>` + data[4][j][0];
+        if (data[4][j][1] != undefined) {
+            code += `<a href='` + data[4][j][1] + `' target="_blank" rel="noopener noreferrer"> read more</a>`;
+        }
+        code += `</h3><br>`;
+    }
+    code += `</div></div>`;
+
+    return code;
+    // name, propContainer, tname, tprop, wikiContainer
+}
+export { gen_card_code, get_pagination_code, gen_navbar_code, get_reranked_code, get_rankpage_code };

@@ -36,36 +36,48 @@ function set_pagination_bar(active, last) {
     elem.innerHTML += codegen.get_pagination_code(active, last);
 }
 
-function set_reranked_page(topic_id) {
+function set_reranked_page(topic_id, topic) {
     const urls = new requests.SubUrls(topic_id, 100);
-    let ctn = document.getElementsByClassName("container")[0];
-    ctn.innerHTML = null;
-    document.getElementsByClassName("pagination")[0].innerHTML = null;
-    document.getElementsByClassName("heading")[0].innerHTML =
-        '<center><h1>Reranked by users</h1></center>';
+    let dctn = document.getElementsByClassName("dropdown-container")[0];
+    dctn.innerHTML = null;
     requests.fetch_url(requests.BASE_URL + urls.reranks, "GET")
         .then(resp => {
             let parsed_data = parser.ranked_lists_parser(JSON.parse(resp));
-            var card = null;
-            for (var i = 1; i < parsed_data.length; i += 8) {
-                card = codegen.get_reranked_code(parsed_data.slice(i-1, i+7));
-                ctn.innerHTML += card;
+
+            var str = `<select name="users" id="dropdown-user" onchange="gen_ranked_page(this.value, '` + topic + `')">`;
+            for (var i = 1; i <= parsed_data.length; i += 3) {
+                var option = codegen.get_reranked_code(parsed_data.slice(i-1, i+1));
+                str += option;
             }
-        });
+            str += `</select>`;
+            dctn.innerHTML = str;
+            set_rankItem_page(parsed_data[parsed_data.length-1], topic);
+        }
+    );
 }
 
-function set_rankItem_page(topic_id) {
+function set_rankItem_page(topic_id, topic) {
     const urls = new requests.SubUrls(topic_id, 100);
-    let ctn = document.getElementsByClassName("container")[0];
+    let ctn = document.getElementsByClassName("dls")[0];
     ctn.innerHTML = null;
-    document.getElementsByClassName("pagination")[0].innerHTML = null;
+    document.getElementsByClassName("pagination")[0].style.display = 'none';
+    document.getElementById("ctn").style.display = 'none';
     document.getElementsByClassName("heading")[0].innerHTML =
-        '<center><h1>Reranked by users</h1></center>';
+        `<center><h1>` + topic + `</h1></center>`;
     requests.fetch_url(requests.BASE_URL + urls.items, "GET")
         .then(resp => {
             var litems = JSON.parse(resp);
-            console.log(litems);
-            console.log(parser.rank_parser(litems));
+            var code = null;
+            var pdata = parser.rank_parser(litems);
+
+            for (let f = 0; f < pdata.length; f += 6) {
+                code = codegen.get_rankpage_code(pdata.slice(f, f+6), (f/6)+1);
+                ctn.innerHTML += code;
+            }
+            if (ctn.innerHTML.length < 5) {
+                ctn.innerHTML = `<center><h1 style="color:cyan">Looks like this user has not added anything.</h1></center>`;
+            }
+            ctn.style.display = 'block';
         });
 }
 
