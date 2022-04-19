@@ -77,3 +77,90 @@ window.change_icon = (self) => {
     }
 
 };
+
+var mybutton = document.getElementById("myBtn");
+
+window.onscroll = () => { scrollFunction(); };
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+window.topFunction = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+window.change_theme = (val) => {
+    const headTag = document.getElementsByTagName('head')[0];
+    var st = headTag.getElementsByTagName("style");
+    for (let i in st) {
+        try {
+            st[i].remove();
+        }
+        catch(e) {}
+    }
+    const styleTag = document.createElement("style");
+    switch (parseInt(val)) {
+        case (0):
+            styleTag.innerHTML = `
+                :root {
+                    --clr-neon: rgb(1, 255, 192);
+                    --clr-bg: rgba(12, 32, 32, 0.712);
+                    --clr-sec-bg: rgb(0, 0, 0);
+                    --clr-bg-self: rgba(0, 0, 0, 0.747);
+                }`;
+            break;
+    
+        case (1):
+            styleTag.innerHTML = `
+                :root {
+                    --clr-neon: rgb(255, 230, 1);
+                    --clr-bg: rgba(12, 32, 32, 0.712);
+                    --clr-sec-bg: rgb(0, 0, 0);
+                    --clr-bg-self: rgba(0, 0, 0, 0.747);
+                }`;
+            break;
+        case (2):
+            styleTag.innerHTML = `
+                :root {
+                    --clr-neon: rgb(255, 1, 1);
+                    --clr-bg: rgba(12, 32, 32, 0.712);
+                    --clr-sec-bg: rgb(0, 0, 0);
+                    --clr-bg-self: rgba(0, 0, 0, 0.747);
+                }`;
+            break;
+        case (3):
+            styleTag.innerHTML = `
+                :root {
+                    --clr-neon: rgb(36, 243, 47);
+                    --clr-bg: rgba(12, 32, 32, 0.712);
+                    --clr-sec-bg: rgb(0, 0, 0);
+                    --clr-bg-self: rgba(0, 0, 0, 0.747);
+                }`;
+            break;
+        case (4):
+            styleTag.innerHTML = `
+                :root {
+                    --clr-neon: rgb(255, 0, 119);
+                    --clr-bg: rgba(12, 32, 32, 0.712);
+                    --clr-sec-bg: rgb(0, 0, 0);
+                    --clr-bg-self: rgba(0, 0, 0, 0.747);
+                }`;
+            break;
+        case (5):
+            styleTag.innerHTML = `
+                :root {
+                    --clr-neon: rgb(255, 60, 1);
+                    --clr-bg: rgba(12, 32, 32, 0.712);
+                    --clr-sec-bg: rgb(0, 0, 0);
+                    --clr-bg-self: rgba(0, 0, 0, 0.747);
+                }`;
+            break;
+    }
+
+    headTag.appendChild(styleTag);
+};

@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Hurricane&family=Poppins:wght@300&display=swap');
 
-:root
-{
-    --clr-sec-bg: #000000;
-    --clr-fg-self: rgb(1, 255, 192);
-    --clr-card-shadow: rgb(7, 238, 255);
-    --clr-card-bg: rgba(0, 0, 0, 0.2);
-    --clr-neon-self: rgb(1, 255, 192);
-    --clr-bg-self: rgba(0, 0, 0, 0.747);
-}
-
 section#ctn
 {
     display: flex;

@@ -1,6 +1,12 @@
 :root {
   --clr-neon: rgb(1, 255, 192);
   --clr-bg: rgba(12, 32, 32, 0.712);
+  --clr-sec-bg: rgb(0, 0, 0);
+  --clr-bg-self: rgba(0, 0, 0, 0.747);
+  --clr-fg-self: var(--clr-neon);
+  --clr-card-shadow: var(--clr-neon);
+  --clr-card-bg: var(--clr-sec-bg);
+  --clr-neon-self: var(--clr-neon);
 }
 
 body {
@@ -9,11 +15,8 @@ body {
   font-family: 'Poppins', sans-serif;
   /*
     background-image: url("../res/bg.jpg");
-    */
+  */
   background-color: var(--clr-sec-bg);
-  /*
-    background-attachment: fixed;
-    */
 }
 
 .heading h1
@@ -30,4 +33,23 @@ select {
   color: var(--clr-neon);
   border-color: var(--clr-neon);
   padding-left: 20px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 25px;
+  background-color: var(--clr-bg);
+  color: var(--clr-neon);
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+#myBtn:hover {
+  background-color: var(--clr-neon);
+  color: var(--clr-bg);
 }

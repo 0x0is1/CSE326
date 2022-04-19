@@ -22,6 +22,16 @@ function set_top_query4npage(page_no) {
         parsed_data = parsed_data.slice(0, -1).slice(-25 * 4);
         var elem = document.getElementsByClassName("container")[0];
         elem.innerHTML = null;
+        var dropdown = document.getElementsByClassName("dropdown-container")[0];
+        var str = "";
+        str += `<select name="theme" id="dropdown-theme" onchange="change_theme(this.value)">`;
+        str += `<option value="0">Dark</option>`;
+        str += `<option value="1">Yellow</option>`;
+        str += `<option value="2">Red</option>`;
+        str += `<option value="3">Greenland</option>`;
+        str += `<option value="4">Blossom</option>`;
+        str += `<option value="5">Orange</option>`;
+        dropdown.innerHTML = str;
         var card = null;
         for (var i = 1; i < parsed_data.length; i += 4) {
             card = codegen.gen_card_code(parsed_data[i + 2], parsed_data[i - 1], parsed_data[i + 1], parsed_data[i]);
@@ -50,6 +60,13 @@ function set_reranked_page(topic_id, topic) {
                 str += option;
             }
             str += `</select>`;
+            str += `<select name="theme" id="dropdown-theme" onchange="change_theme(this.value)">`;
+            str += `<option value="0">Cyan</option>`;
+            str += `<option value="1">Yellow</option>`;
+            str += `<option value="2">Red</option>`;
+            str += `<option value="3">Greenland</option>`;
+            str += `<option value="4">Blossom</option>`;
+            str += `<option value="5">Orange</option>`;
             dctn.innerHTML = str;
             set_rankItem_page(parsed_data[parsed_data.length-1], topic);
         }
@@ -62,8 +79,7 @@ function set_rankItem_page(topic_id, topic) {
     ctn.innerHTML = null;
     document.getElementsByClassName("pagination")[0].style.display = 'none';
     document.getElementById("ctn").style.display = 'none';
-    document.getElementsByClassName("heading")[0].innerHTML =
-        `<center><h1>` + topic + `</h1></center>`;
+    document.getElementsByClassName("heading")[0].innerHTML = `<center><h1>` + topic + `</h1></center>`;
     requests.fetch_url(requests.BASE_URL + urls.items, "GET")
         .then(resp => {
             var litems = JSON.parse(resp);

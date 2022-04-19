@@ -57,8 +57,25 @@ button:hover{
       text-shadow: none;
       box-shadow: 0 0 2em 0.5em var(--clr-neon);
 }
+
 div.cbh{
   display: none;
+}
+
+.dropdown-container{
+  background: var(--clr-bg);
+  padding-top: 10px;
+  min-height: 5vh;
+}
+
+#dropdown-user{
+  float: left;
+  margin-left: 20px;
+}
+
+#dropdown-theme {
+  float: right;
+  margin-right: 20px;
 }
 
 @keyframes fade_in_show {
