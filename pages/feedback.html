@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/grid.css">
+    <link rel="stylesheet" href="../css/feedback.css">
+    <script src = "../app.js" type="module"></script>
+    <title>
+        Top 100 - Feedback
+    </title>
+    <script type="module">
+        import * as events_handler from '../js/events_handler.js';
+        window.onload = () => events_handler.set_navbar(1);
+    </script>
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <link rel="stylesheet" href="../css/basic.css">
+    <script type = "module">
+        import * as elemgen from '../js/elemgen.js';
+        var dropdown = document.getElementsByClassName("dropdown-container")[0];
+        var str = elemgen.gen_theme_code();
+        dropdown.innerHTML = str;
+        window.change_theme(localStorage.getItem("themecode") | 0);
+        window.reset = () =>{
+            alert("Your form has been sumbitted. Thanks.");
+        }
+    </script>
+</head>
+
+<body>
+    <header class="navheader">
+    </header>
+    <section>
+        <div class="container">
+        </div>
+    </section>
+    <div class="dropdown-container"></div>
+    <div class="grid">
+        <center>
+            <u>
+                <h1>
+                Feeback panel
+                </h1>
+            </u>
+            <h4>Thanks for visiting here.<br>
+                We appreciate any kind of bug or feedback from user.<br>
+                Please proceed to fill your details so that we can contact you.
+            </h4>
+        <form action="https://formspree.io/f/mbjwzepw" id="feedbackf" method="POST" target="_blank"
+        onsubmit="reset()">
+            <label>
+                <input type="text" name="name" placeholder="Your name i.e John Doe">
+            </label>
+            <br>
+            <label>
+                <input type="email" name="email" placeholder="Your email address here, i.e johndoe@mail.com">
+            </label>
+            <br>
+            <label>
+                <textarea name="message" placeholder="Type your feedback here"></textarea>
+            </label>
+            <br>
+            <button type="submit" id="send" style="float: none;">Send</button>
+        </form>
+        </center>
+    </div>
+    <span id="myBtn" onclick="topFunction()" class="material-icons">&#xf182;</span>
+</body>
+
+</html>

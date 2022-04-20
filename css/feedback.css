@@ -1,0 +1,29 @@
+.grid{
+  background-color: var(--clr-bg);
+}
+
+form {
+  padding: 20px 20px;
+  font-size: 30px;
+}
+
+input,
+textarea {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  background-color: var(--clr-bg);
+  color: var(--clr-neon);
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+textarea{
+  min-height: 20vh;
+}
+
+button{
+  min-height: 8vh;
+  width: 20%;
+  font-size: 20px;
+}
