@@ -31,9 +31,6 @@
         var str = elemgen.gen_theme_code();
         dropdown.innerHTML = str;
         window.change_theme(localStorage.getItem("themecode") | 0);
-        window.reset = () =>{
-            alert("Your form has been sumbitted. Thanks.");
-        }
     </script>
 </head>
 
@@ -56,8 +53,7 @@
                 We appreciate any kind of bug or feedback from user.<br>
                 Please proceed to fill your details so that we can contact you.
             </h4>
-        <form action="https://formspree.io/f/mbjwzepw" id="feedbackf" method="POST" target="_blank"
-        onsubmit="reset()">
+        <form action="https://formspree.io/f/mbjwzepw" id="feedbackf" method="POST" target="_blank">
             <label>
                 <input type="text" name="name" placeholder="Your name i.e John Doe">
             </label>

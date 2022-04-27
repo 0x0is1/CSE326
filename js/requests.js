@@ -1,5 +1,5 @@
-
-const BASE_URL = "https://api.ranker.com";
+// cors-less api forwarding
+const BASE_URL = "https://rankapi.0x0is1.repl.co";
 const top100_tagid = 83721;
 
 class SubUrls {
@@ -14,7 +14,6 @@ function fetch_url(url, method = "GET") {
     let response = new Promise(resolve => {
         let xhr = new XMLHttpRequest();
         xhr.open(method, url, true);
-        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
         xhr.send();
         xhr.onload = () => {
             if (xhr.status === 200) {
