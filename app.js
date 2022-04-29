@@ -12,6 +12,7 @@ window.onload = () => {
     events_handler.set_top_query4npage(1);
     events_handler.set_pagination_bar(1, TOTAL_PAGES);
     window.change_theme(localStorage.getItem("themecode") | 0);
+    document.getElementsByTagName("option")[localStorage.getItem("themecode") | 0].setAttribute("selected", "selected");
 };
 
 window.query4npage = (n) => {
