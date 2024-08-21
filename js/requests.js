@@ -1,5 +1,5 @@
 // cors-less api forwarding
-const BASE_URL = "https://rankapi.0x0is1.repl.co";
+const BASE_URL = "https://d30d79ee-23bb-48c6-9c2e-80f3bfcdf046-00-nam2yw0hhdvk.janeway.replit.dev/";
 const top100_tagid = 83721;
 
 class SubUrls {
